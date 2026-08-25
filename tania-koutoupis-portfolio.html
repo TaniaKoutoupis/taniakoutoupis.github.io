@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tania Koutoupis — B2B Demand Generation & ABM</title>
+<meta name="description" content="Tania Koutoupis — B2B demand generation, ABM, and content strategy portfolio. Chicago, IL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,600;1,9..144,420&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0F24;
+    --surface:#121838;
+    --surface-2:#171F49;
+    --line:#293159;
+    --ink:#EDEAE0;
+    --muted:#9095B8;
+    --red:#DA3B3F;
+    --gold:#C9A227;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  h1,h2,h3{font-family:'Fraunces',serif; margin:0; font-weight:600; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+  ::selection{background:var(--red); color:#fff;}
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,15,36,0.88); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .navrow{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .brand{font-family:'Fraunces',serif; font-weight:600; font-size:18px; text-decoration:none; letter-spacing:0.01em;}
+  .brand span{color:var(--red);}
+  nav.links{display:flex; gap:28px;}
+  nav.links a{font-size:13px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); text-decoration:none; transition:color .15s;}
+  nav.links a:hover{color:var(--ink);}
+  .navcta{font-size:13px; border:1px solid var(--line); padding:9px 16px; border-radius:6px; text-decoration:none; color:var(--ink); white-space:nowrap; transition:border-color .15s, background .15s;}
+  .navcta:hover{border-color:var(--red); background:var(--surface);}
+  .navmenu-btn{display:none; background:none; border:1px solid var(--line); color:var(--ink); border-radius:6px; padding:8px 10px; font-size:20px; line-height:1; cursor:pointer;}
+
+  /* HERO */
+  .hero{padding:96px 0 0; position:relative; overflow:hidden;}
+  .eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--red);}
+  .hero h1{font-size:clamp(40px,6vw,74px); line-height:0.98; margin-top:18px; max-width:14ch;}
+  .hero p.lede{font-size:19px; color:var(--muted); max-width:52ch; margin-top:22px; line-height:1.6;}
+  .hero-actions{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:6px; font-size:14px; font-weight:500; text-decoration:none; transition:transform .15s, opacity .15s;}
+  .btn-primary{background:var(--red); color:#fff;}
+  .btn-secondary{border:1px solid var(--line); color:var(--ink);}
+  .btn:hover{transform:translateY(-1px);}
+
+  /* TICKER */
+  .ticker-outer{margin-top:72px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--surface); overflow:hidden; white-space:nowrap;}
+  .ticker-track{display:inline-flex; align-items:center; padding:16px 0; animation:scroll 42s linear infinite;}
+  @media (prefers-reduced-motion: reduce){ .ticker-track{animation:none;} }
+  .ticker-track span{display:inline-flex; align-items:center; padding:0 28px; font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--muted); border-right:1px solid var(--line);}
+  .ticker-track span b{color:var(--gold); font-weight:600; margin-right:8px;}
+  @keyframes scroll{ 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+
+  section{padding:104px 0;}
+  .section-head{max-width:56ch; margin-bottom:52px;}
+  .section-head .eyebrow{margin-bottom:14px; display:block;}
+  .section-head h2{font-size:clamp(28px,4vw,40px);}
+  .section-head p{color:var(--muted); margin-top:14px; font-size:16px; line-height:1.65;}
+
+  /* PILLARS */
+  .pillars{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+  .pillar{background:var(--surface); padding:28px 22px; min-height:220px; display:flex; flex-direction:column; justify-content:space-between; transition:background .2s;}
+  .pillar:hover{background:var(--surface-2);}
+  .pillar .num{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--red);}
+  .pillar h3{font-size:17px; margin-top:20px; line-height:1.25;}
+  .pillar p{font-size:13.5px; color:var(--muted); line-height:1.55; margin-top:12px;}
+
+  /* CASE STUDIES */
+  .case{border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); margin-bottom:20px; overflow:hidden;}
+  .case-grid{display:grid; grid-template-columns:1.35fr 1fr;}
+  .case-body{padding:40px;}
+  .case-tag{font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--red);}
+  .case h3{font-size:26px; margin-top:14px; line-height:1.15;}
+  .case .dek{color:var(--muted); font-size:15px; margin-top:14px; line-height:1.65;}
+  .case ul{list-style:none; padding:0; margin:24px 0 0; display:flex; flex-direction:column; gap:13px;}
+  .case li{font-size:14.5px; line-height:1.55; padding-left:18px; position:relative; color:var(--ink);}
+  .case li::before{content:"—"; position:absolute; left:0; color:var(--red);}
+  .case li b{color:var(--ink); font-weight:600;}
+  .case-stats{background:var(--surface-2); border-left:1px solid var(--line); padding:40px 32px; display:flex; flex-direction:column; gap:24px; justify-content:center;}
+  .stat .val{font-family:'JetBrains Mono',monospace; font-size:clamp(26px,3vw,34px); font-weight:600; color:var(--gold); line-height:1;}
+  .stat .lbl{font-size:12.5px; color:var(--muted); margin-top:8px; line-height:1.4;}
+  .stat-divider{border-top:1px solid var(--line); padding-top:22px;}
+  @media (max-width:820px){
+    .case-grid{grid-template-columns:1fr;}
+    .case-stats{border-left:none; border-top:1px solid var(--line); flex-direction:row; flex-wrap:wrap;}
+    .stat-divider{border-top:none; padding-top:0;}
+  }
+
+  /* partner row */
+  .partners{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px;}
+  .partner-card{background:var(--surface-2); border:1px solid var(--line); border-radius:8px; padding:20px;}
+  .partner-card .pname{font-family:'Fraunces',serif; font-size:17px; font-weight:600;}
+  .partner-card p{font-size:13px; color:var(--muted); margin-top:8px; line-height:1.5;}
+  .partner-card .pstats{display:flex; gap:18px; margin-top:14px;}
+  .partner-card .pstats .v{font-family:'JetBrains Mono',monospace; color:var(--gold); font-weight:600; font-size:17px;}
+  .partner-card .pstats .l{font-size:10.5px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em;}
+  @media (max-width:820px){.partners{grid-template-columns:1fr;}}
+
+  /* MARTECH */
+  table.stack{width:100%; border-collapse:collapse; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+  table.stack th{text-align:left; font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); background:var(--surface-2); padding:16px 20px; border-bottom:1px solid var(--line); font-weight:500;}
+  table.stack td{padding:18px 20px; border-bottom:1px solid var(--line); font-size:14px; vertical-align:top; background:var(--surface);}
+  table.stack tr:last-child td{border-bottom:none;}
+  table.stack td.cat{font-weight:600; font-family:'Fraunces',serif; font-size:15px;}
+  table.stack td.tools{color:var(--red); font-family:'JetBrains Mono',monospace; font-size:13px;}
+  table.stack td.app{color:var(--muted); line-height:1.5;}
+  @media (max-width:700px){
+    table.stack, table.stack thead, table.stack tbody, table.stack th, table.stack td, table.stack tr{display:block;}
+    table.stack thead{display:none;}
+    table.stack tr{border-bottom:1px solid var(--line); padding:16px 20px;}
+    table.stack td{border:none; padding:6px 0;}
+  }
+
+  /* FOOTER / CONTACT */
+  footer{background:var(--surface); border-top:1px solid var(--line); padding:96px 0 56px;}
+  footer h2{font-size:clamp(30px,5vw,52px); max-width:16ch;}
+  footer .lede{color:var(--muted); font-size:17px; margin-top:18px; max-width:50ch; line-height:1.6;}
+  .foot-links{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .foot-meta{margin-top:64px; padding-top:28px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; color:var(--muted); font-size:13px;}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (max-width:900px){
+    .pillars{grid-template-columns:repeat(2,1fr);}
+    nav.links{display:none;}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 20px;}
+    section{padding:64px 0;}
+    .pillars{grid-template-columns:1fr;}
+    .case-body{padding:26px;}
+    .case-stats{padding:26px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap navrow">
+    <a class="brand" href="#top">TANIA<span>·</span>KOUTOUPIS</a>
+    <nav class="links">
+      <a href="#pillars">Pillars</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="navcta" href="mailto:Koutoupisa@gmail.com">Get in touch</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">B2B marketing & demand portfolio</span>
+      <h1>Demand generation that closes, not just fills a funnel.</h1>
+      <p class="lede">B2B demand generation, ABM, content strategy, and brand activation for enterprise software and retail technology. Based in Chicago, seeking Director / Senior Manager roles reporting into a CMO or VP Marketing.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#work">See the work</a>
+        <a class="btn btn-secondary" href="https://linkedin.com/in/taniakoutoupis" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="ticker-outer">
+      <div class="ticker-track" id="ticker"></div>
+    </div>
+  </section>
+
+  <section id="pillars">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Core strategic pillars</span>
+        <h2>Five disciplines, one funnel.</h2>
+        <p>Full-funnel programs that connect paid media, content, ABM, and field execution to pipeline and closed revenue.</p>
+      </div>
+      <div class="pillars reveal">
+        <div class="pillar">
+          <span class="num">01</span>
+          <div>
+            <h3>Demand Generation</h3>
+            <p>Full-funnel demand engines aligning paid media, content, ABM, and field programs directly to pipeline and closed revenue.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="num">02</span>
+          <div>
+            <h3>Account-Based Marketing</h3>
+            <p>Targeted 1:1 and 1:cluster playbooks converting high-value accounts, built for exceptional return on ad spend.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="num">03</span>
+          <div>
+            <h3>Thought Leadership</h3>
+            <p>Complex technical data translated into premium content and earned media that build category authority.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="num">04</span>
+          <div>
+            <h3>Brand Activation</h3>
+            <p>Media relations and PR strategy that move a functional vendor into an industry authority, growing share of voice.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="num">05</span>
+          <div>
+            <h3>Product & Content Marketing</h3>
+            <p>Positioning and GTM messaging that turn technical capability into buyer-ready narratives and sales tools.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Selected work</span>
+        <h2>Campaigns, by the numbers.</h2>
+        <p>Eight programs across Appriss Retail, DemandTec, dunnhumby, CDW, and Sears Holdings.</p>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-grid">
+          <div class="case-body">
+            <span class="case-tag">Demand generation · Appriss Retail</span>
+            <h3>NRF Consumer Returns Benchmark Report</h3>
+            <p class="dek">Co-authored a landmark benchmark report with the National Retail Federation, then engineered it as the centerpiece of a full-funnel, multi-channel demand campaign.</p>
+            <ul>
+              <li><b>Integrated launch:</b> flagship "Big Idea Session" at NRF anchoring a full multi-channel activation.</li>
+              <li><b>Email & paid:</b> integrated nurture and paid media push promoting the report across the funnel.</li>
+              <li><b>Press & bylines:</b> direct journalist and trade outreach, including live broadcast coverage on MSNBC.</li>
+              <li><b>Sales & CRM toolkit:</b> built so reps could use the report to open enterprise conversations.</li>
+              <li><b>Industry acclaim:</b> won the 2025 AMA Crystal Award for Best Technical Report.</li>
+            </ul>
+          </div>
+          <div class="case-stats">
+            <div class="stat"><div class="val">~$3M</div><div class="lbl">closed revenue, direct attribution to 3 enterprise deals</div></div>
+            <div class="stat stat-divider"><div class="val">500+</div><div class="lbl">direct high-intent downloads</div></div>
+            <div class="stat stat-divider"><div class="val">3.6B</div><div class="lbl">global earned media impressions</div></div>
+            <div class="stat stat-divider"><div class="val">300+</div><div class="lbl">earned media placements</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-grid">
+          <div class="case-body">
+            <span class="case-tag">Brand activation · Appriss Retail</span>
+            <h3>Thought Leadership Authority</h3>
+            <p class="dek">Personally managed all media relations, corporate communications, and brand activation to move Appriss Retail from a functional software vendor to a trusted authority in retail fraud.</p>
+            <ul>
+              <li><b>National broadcasters:</b> secured live broadcast coverage on MSNBC.</li>
+              <li><b>Bylines & commentary:</b> placed executive bylines and expert commentary across trade and business press.</li>
+              <li><b>Journalist relationships:</b> built a direct pipeline to retail journalists, establishing credibility with executive buyers.</li>
+            </ul>
+          </div>
+          <div class="case-stats">
+            <div class="stat"><div class="val">52% → 90%</div><div class="lbl">share of voice, year over year, over legacy enterprise competitors</div></div>
+            <div class="stat stat-divider"><div class="val">Tier-one</div><div class="lbl">established as the go-to retail risk voice for national journalists and producers</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-grid">
+          <div class="case-body">
+            <span class="case-tag">ABM · Appriss Retail</span>
+            <h3>Target Account Whitespace Expansion</h3>
+            <p class="dek">Targeted whitespace accounts within the top 100 US retailers using a pure digital, multi-tiered framework, leading with education and peer benchmarks rather than product features.</p>
+            <ul>
+              <li><b>Top-tier:</b> highly personalized 1:1 tailored messaging sets.</li>
+              <li><b>Mid-tier:</b> targeted digital plays mapped to division priorities.</li>
+              <li><b>Scale:</b> automated retargeting for wider account coverage.</li>
+              <li><b>Paid media:</b> IP-targeted LinkedIn and Google ads to named contacts at Walmart, Starbucks, and Home Depot-tier accounts.</li>
+            </ul>
+          </div>
+          <div class="case-stats">
+            <div class="stat"><div class="val">6.8x</div><div class="lbl">ROAS, $1.7M influenced pipeline on $250K spend</div></div>
+            <div class="stat stat-divider"><div class="val">$250K</div><div class="lbl">campaign spend</div></div>
+            <div class="stat stat-divider"><div class="val">$1.7M</div><div class="lbl">influenced pipeline</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-body" style="padding-bottom:40px;">
+          <span class="case-tag">Partner marketing · Appriss Retail</span>
+          <h3>Co-Branded Sales Infrastructure</h3>
+          <p class="dek">Led partner marketing for key integrations, authoring each solution overview end to end and translating technical fraud, returns, and risk-decisioning architecture into customer-facing value for sales teams.</p>
+          <div class="partners">
+            <div class="partner-card">
+              <div class="pname">Shopify</div>
+              <p>Returns & Claims app — real-time fraud and abuse decisioning inside Shopify POS and checkout.</p>
+              <div class="pstats"><div><div class="v">8–12%</div><div class="l">Fewer returns</div></div><div><div class="v">10x</div><div class="l">ROI</div></div></div>
+            </div>
+            <div class="partner-card">
+              <div class="pname">Optoro</div>
+              <p>Joint fraud-protection and returns-management story, paired with Optoro's RMS used by Gap, American Eagle, and Best Buy.</p>
+              <div class="pstats"><div><div class="v">10x</div><div class="l">ROI potential</div></div><div><div class="v">360°</div><div class="l">Fraud coverage</div></div></div>
+            </div>
+            <div class="partner-card">
+              <div class="pname">Riskified</div>
+              <p>Partner narrative bridging checkout, returns, and chargeback disputes into one risk view.</p>
+              <div class="pstats"><div><div class="v">360°</div><div class="l">Customer view</div></div><div><div class="v">50+</div><div class="l">ML data points</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-grid">
+          <div class="case-body">
+            <span class="case-tag">Content & enablement · DemandTec</span>
+            <h3>Commercializing AI Data Science</h3>
+            <p class="dek">Served as Director of Content Strategy and Senior Sales Enablement Manager, developing clear narratives from complex technical capability to enable faster pipeline conversion.</p>
+            <ul>
+              <li><b>Problem-first positioning:</b> flagship buying guides, narrative frameworks, and sales decks repositioning conversations around inflation, labor shortages, and supply chain disruption.</li>
+              <li><b>Enablement toolkit:</b> messaging frameworks, competitive battlecards, and localized pitch narratives contributing to an 18% lift in MQLs.</li>
+              <li><b>Validation case studies:</b> customer proof built to demonstrate measurable financial impact.</li>
+            </ul>
+          </div>
+          <div class="case-stats">
+            <div class="stat"><div class="val">Up to 4%</div><div class="lbl">Year 1 margin gains for customers</div></div>
+            <div class="stat stat-divider"><div class="val">95%</div><div class="lbl">recommendation acceptance rate</div></div>
+            <div class="stat stat-divider"><div class="val">+18%</div><div class="lbl">lift in MQLs</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-grid">
+          <div class="case-body">
+            <span class="case-tag">Content & campaign strategy · dunnhumby</span>
+            <h3>Multi-Format Content & Thought Leadership</h3>
+            <p class="dek">Spearheaded diverse B2B assets for North American sales, including client-facing video, interactive surveys, and localized partner case studies.</p>
+            <ul>
+              <li><b>"foodfresh" campaign playbook:</b> curated editorial content and an integrated launch across paid social, organic, email, and print at national retail association events.</li>
+              <li><b>Top-of-funnel engine:</b> a repeatable content model the NA sales team used to open new enterprise retail conversations.</li>
+            </ul>
+          </div>
+          <div class="case-stats">
+            <div class="stat"><div class="val">800+</div><div class="lbl">high-intent downloads</div></div>
+            <div class="stat stat-divider"><div class="val">+145%</div><div class="lbl">lift in organic social engagement across the content library</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-grid">
+          <div class="case-body">
+            <span class="case-tag">Paid social · CDW</span>
+            <h3>Precision Performance & Paid Social</h3>
+            <p class="dek">Personally structured and scaled performance budgets across LinkedIn, Facebook, Twitter, and YouTube to target enterprise buyer personas, with advanced segmentation and landing page testing to lower cost-per-lead.</p>
+          </div>
+          <div class="case-stats">
+            <div class="stat"><div class="val">$3.0M</div><div class="lbl">annual budget across digital and social demand networks</div></div>
+            <div class="stat stat-divider"><div class="val">+22%</div><div class="lbl">CTR uplift through copy testing and image variation</div></div>
+            <div class="stat stat-divider"><div class="val">−19%</div><div class="lbl">CPL reduction year over year</div></div>
+            <div class="stat stat-divider"><div class="val">20M</div><div class="lbl">sustained quarterly top-of-funnel reach</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-grid">
+          <div class="case-body">
+            <span class="case-tag">B2C sponsorship marketing · Craftsman Tools at Sears</span>
+            <h3>World of Outlaws Sponsorship Activation</h3>
+            <p class="dek">As Integrated Marketing Manager, managed Craftsman Tools' sponsorship of World of Outlaws sprint car racing across 135 races, turning a brand sponsorship into a measurable driver of Sears store traffic and sales.</p>
+            <ul>
+              <li><b>Track & field activation:</b> branding, award redemption offers, and field marketing across all 135 races.</li>
+              <li><b>In-store attribution:</b> coupon and award-card programs tied directly to Sears sales, analyzed by store distance from track.</li>
+              <li><b>Owned & earned content:</b> tested short and long-form video, live, and blog content, redirecting future production toward what actually drove engagement.</li>
+            </ul>
+          </div>
+          <div class="case-stats">
+            <div class="stat"><div class="val">$1.9M</div><div class="lbl">in-store Craftsman sales tied to event-based offers</div></div>
+            <div class="stat stat-divider"><div class="val">44,785</div><div class="lbl">new Craftsman Club members enrolled</div></div>
+            <div class="stat stat-divider"><div class="val">1.8B+</div><div class="lbl">earned brand impressions</div></div>
+            <div class="stat stat-divider"><div class="val">+48%</div><div class="lbl">YoY growth in streaming viewership</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Martech grid</span>
+        <h2>Modern demand infrastructure.</h2>
+      </div>
+      <div class="reveal" style="overflow-x:auto;">
+        <table class="stack">
+          <thead>
+            <tr><th>Infrastructure category</th><th>Core stack</th><th>Strategic application</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cat">CRM & Automation</td>
+              <td class="tools">Salesforce, HubSpot, Eloqua</td>
+              <td class="app">Automated complex enterprise nurture campaigns, structured attribution, deep-funnel metrics.</td>
+            </tr>
+            <tr>
+              <td class="cat">ABM & Intent</td>
+              <td class="tools">6sense, ZoomInfo</td>
+              <td class="app">Tracked technographic patterns and digital intent triggers to cue sales and CS outreach.</td>
+            </tr>
+            <tr>
+              <td class="cat">Paid Advertising</td>
+              <td class="tools">LinkedIn, Google Ads, Meta</td>
+              <td class="app">Hyper-targeted campaigns mapped tightly by buyer persona across 1:1 and scaled tiers.</td>
+            </tr>
+            <tr>
+              <td class="cat">Analytics & PR</td>
+              <td class="tools">Google Analytics, Cision</td>
+              <td class="app">Measured multi-touch conversion efficiencies, landing page conversions, and earned media share of voice.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Let's connect</span>
+    <h2>Seeking B2B demand gen & ABM roles reporting into CMO / VP Marketing.</h2>
+    <p class="lede">Translating complex technology capability into market-leading content, optimized performance funnels, and high-impact ABM strategy.</p>
+    <div class="foot-links">
+      <a class="btn btn-primary" href="mailto:Koutoupisa@gmail.com">Koutoupisa@gmail.com</a>
+      <a class="btn btn-secondary" href="https://linkedin.com/in/taniakoutoupis" target="_blank" rel="noopener">linkedin.com/in/taniakoutoupis ↗</a>
+    </div>
+    <div class="foot-meta">
+      <span>Tania Koutoupis — Chicago, IL</span>
+      <span>B2B demand generation, content strategy & brand activation</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var metrics = [
+    ["$3M","closed revenue — NRF report"],
+    ["3.6B","earned media impressions"],
+    ["6.8x","ABM ROAS"],
+    ["90%","share of voice, up from 52%"],
+    ["18%","lift in MQLs"],
+    ["$1.9M","in-store sales driven — Sears"],
+    ["20M","quarterly paid social reach"],
+    ["44,785","new loyalty members enrolled"]
+  ];
+  var track = document.getElementById('ticker');
+  var html = '';
+  for (var r = 0; r < 2; r++) {
+    metrics.forEach(function(m){
+      html += '<span><b>' + m[0] + '</b>' + m[1] + '</span>';
+    });
+  }
+  track.innerHTML = html;
+
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.1});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  var navBtn = document.querySelector('.navmenu-btn');
+</script>
+
+</body>
+</html>
