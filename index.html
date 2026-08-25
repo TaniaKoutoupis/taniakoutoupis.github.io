@@ -10,27 +10,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,600;1,9..144,420&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #27272A;
-    --surface: #3F3F46;
-    --surface-2: #52525B;
-    --line: #66666F;
+    --bg: #242426;
+    --surface: #303033;
+    --surface-2: #39393D;
+    --line: #4A4A4F;
 
-    --ink: #FAFAFA;
-    --muted: #D4D4D8;
+    --ink: #F3F0E8;
+    --muted: #B9B7B1;
 
-    /* ACCENT PALETTE */
-    --cerulean: #38BDF8;
-    --coral: #FB7185;
-    --gold: #F2C94C;
-    --lavender: #A78BFA;
-    --teal: #2DD4BF;
+    --red: #C96A5A;        /* muted terracotta */
+    --cerulean: #7FAFC4;   /* dusty blue */
+    --gold: #C7A96B;       /* muted gold */
 
     --radius: 10px;
   }
 
-  * { box-sizing: border-box; }
+  * {
+    box-sizing: border-box;
+  }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
     margin: 0;
@@ -41,7 +42,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
+    html {
+      scroll-behavior: auto;
+    }
+
     * {
       animation-duration: 0.001ms !important;
       animation-iteration-count: 1 !important;
@@ -49,14 +53,17 @@
     }
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: 'Fraunces', serif;
     margin: 0;
     font-weight: 600;
     letter-spacing: -0.01em;
   }
 
-  p, li {
+  p,
+  li {
     line-height: 1.75;
     letter-spacing: 0.01em;
   }
@@ -76,8 +83,8 @@
   }
 
   ::selection {
-    background: var(--cerulean);
-    color: #000;
+    background: var(--red);
+    color: #fff;
   }
 
   a:focus-visible,
@@ -95,9 +102,8 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(39, 39, 42, 0.96);
+    background: rgba(36, 36, 38, 0.95);
     backdrop-filter: blur(8px);
-    border-top: 3px solid var(--cerulean);
     border-bottom: 1px solid var(--line);
     color: var(--ink);
   }
@@ -119,7 +125,7 @@
   }
 
   .brand span {
-    color: var(--coral) !important;
+    color: var(--red) !important;
   }
 
   nav.links {
@@ -137,7 +143,7 @@
   }
 
   nav.links a:hover {
-    color: var(--cerulean) !important;
+    color: var(--ink) !important;
   }
 
   .navcta {
@@ -152,7 +158,7 @@
   }
 
   .navcta:hover {
-    border-color: var(--coral);
+    border-color: var(--red);
     background: var(--surface);
   }
 
@@ -184,11 +190,11 @@
     font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--coral);
+    color: var(--red);
   }
 
   .hero h1 {
-    font-size: clamp(40px,6vw,74px);
+    font-size: clamp(40px, 6vw, 74px);
     line-height: 0.98;
     margin-top: 18px;
     max-width: 14ch;
@@ -199,6 +205,7 @@
     color: var(--muted);
     max-width: 52ch;
     margin-top: 22px;
+    line-height: 1.6;
   }
 
   .hero-actions {
@@ -221,8 +228,8 @@
   }
 
   .btn-primary {
-    background: var(--coral);
-    color: #18181B;
+    background: var(--red);
+    color: #fff;
     font-weight: 600;
   }
 
@@ -284,8 +291,13 @@
   }
 
   @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
 
@@ -308,13 +320,14 @@
   }
 
   .section-head h2 {
-    font-size: clamp(28px,4vw,40px);
+    font-size: clamp(28px, 4vw, 40px);
   }
 
   .section-head p {
     color: var(--muted);
     margin-top: 14px;
     font-size: 16px;
+    line-height: 1.65;
   }
 
 
@@ -324,7 +337,7 @@
 
   .pillars {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1px;
     background: var(--line);
     border: 1px solid var(--line);
@@ -353,22 +366,6 @@
     font-weight: 600;
   }
 
-  .pillar:nth-child(2) .num {
-    color: var(--coral);
-  }
-
-  .pillar:nth-child(3) .num {
-    color: var(--gold);
-  }
-
-  .pillar:nth-child(4) .num {
-    color: var(--lavender);
-  }
-
-  .pillar:nth-child(5) .num {
-    color: var(--teal);
-  }
-
   .pillar h3 {
     font-size: 17px;
     margin-top: 20px;
@@ -378,6 +375,7 @@
   .pillar p {
     font-size: 13.5px;
     color: var(--muted);
+    line-height: 1.55;
     margin-top: 12px;
   }
 
@@ -408,7 +406,7 @@
     font-size: 11.5px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--coral);
+    color: var(--red);
   }
 
   .case h3 {
@@ -421,6 +419,7 @@
     color: var(--muted);
     font-size: 15px;
     margin-top: 14px;
+    line-height: 1.65;
   }
 
   .case ul {
@@ -434,6 +433,7 @@
 
   .case li {
     font-size: 14.5px;
+    line-height: 1.55;
     padding-left: 18px;
     position: relative;
     color: var(--ink);
@@ -443,7 +443,7 @@
     content: "—";
     position: absolute;
     left: 0;
-    color: var(--cerulean);
+    color: var(--red);
   }
 
   .case li b {
@@ -453,12 +453,12 @@
 
 
   /* =========================
-     METRIC BLOCKS
+     METRICS
   ========================= */
 
   .case-stats {
-    background: rgba(56, 189, 248, 0.06);
-    border-left: 1px solid rgba(56, 189, 248, 0.22);
+    background: rgba(127, 175, 196, 0.055);
+    border-left: 1px solid rgba(127, 175, 196, 0.20);
     padding: 40px 32px;
     display: flex;
     flex-direction: column;
@@ -468,7 +468,7 @@
 
   .stat .val {
     font-family: 'JetBrains Mono', monospace;
-    font-size: clamp(26px,3vw,34px);
+    font-size: clamp(26px, 3vw, 34px);
     font-weight: 600;
     color: var(--gold);
     line-height: 1;
@@ -478,44 +478,23 @@
     font-size: 12.5px;
     color: var(--muted);
     margin-top: 8px;
+    line-height: 1.4;
   }
 
   .stat-divider {
-    border-top: 1px solid rgba(242, 201, 76, 0.25);
+    border-top: 1px solid rgba(199, 169, 107, 0.22);
     padding-top: 22px;
   }
 
 
-  /* Alternate case study colors */
-
-  .case:nth-child(2) .case-stats {
-    background: rgba(167, 139, 250, 0.06);
-    border-left-color: rgba(167, 139, 250, 0.22);
-  }
-
-  .case:nth-child(2) .stat .val {
-    color: var(--lavender);
-  }
-
-  .case:nth-child(3) .case-stats {
-    background: rgba(45, 212, 191, 0.06);
-    border-left-color: rgba(45, 212, 191, 0.22);
-  }
-
-  .case:nth-child(3) .stat .val {
-    color: var(--teal);
-  }
-
-
-  @media (max-width:820px) {
-
+  @media (max-width: 820px) {
     .case-grid {
       grid-template-columns: 1fr;
     }
 
     .case-stats {
       border-left: none;
-      border-top: 1px solid rgba(56, 189, 248, 0.2);
+      border-top: 1px solid rgba(127, 175, 196, 0.20);
       flex-direction: row;
       flex-wrap: wrap;
     }
@@ -533,7 +512,7 @@
 
   .partners {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 14px;
     margin-top: 14px;
   }
@@ -543,18 +522,6 @@
     border: 1px solid var(--line);
     border-radius: 8px;
     padding: 20px;
-  }
-
-  .partner-card:nth-child(1) {
-    border-top: 3px solid var(--cerulean);
-  }
-
-  .partner-card:nth-child(2) {
-    border-top: 3px solid var(--coral);
-  }
-
-  .partner-card:nth-child(3) {
-    border-top: 3px solid var(--gold);
   }
 
   .partner-card .pname {
@@ -567,6 +534,7 @@
     font-size: 13px;
     color: var(--muted);
     margin-top: 8px;
+    line-height: 1.5;
   }
 
   .partner-card .pstats {
@@ -577,7 +545,7 @@
 
   .partner-card .pstats .v {
     font-family: 'JetBrains Mono', monospace;
-    color: var(--teal);
+    color: var(--gold);
     font-weight: 600;
     font-size: 17px;
   }
@@ -589,7 +557,7 @@
     letter-spacing: 0.05em;
   }
 
-  @media (max-width:820px) {
+  @media (max-width: 820px) {
     .partners {
       grid-template-columns: 1fr;
     }
@@ -647,10 +615,10 @@
 
   table.stack td.app {
     color: var(--muted);
+    line-height: 1.5;
   }
 
-  @media (max-width:700px) {
-
+  @media (max-width: 700px) {
     table.stack,
     table.stack thead,
     table.stack tbody,
@@ -687,7 +655,7 @@
   }
 
   footer h2 {
-    font-size: clamp(30px,5vw,52px);
+    font-size: clamp(30px, 5vw, 52px);
     max-width: 16ch;
   }
 
@@ -696,6 +664,7 @@
     font-size: 17px;
     margin-top: 18px;
     max-width: 50ch;
+    line-height: 1.6;
   }
 
   .foot-links {
@@ -738,10 +707,9 @@
      RESPONSIVE
   ========================= */
 
-  @media (max-width:900px) {
-
+  @media (max-width: 900px) {
     .pillars {
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
 
     nav.links {
@@ -749,8 +717,7 @@
     }
   }
 
-  @media (max-width:640px) {
-
+  @media (max-width: 640px) {
     .wrap {
       padding: 0 20px;
     }
